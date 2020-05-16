@@ -44,7 +44,7 @@ const SignupPage = () => {
             alert("invalid email");
         }
         else {
-            fetch("http://localhost:5000/signup", {
+            fetch("/signup", {
                 method: "post",
                 headers: {
                     "Content-Type": "application/json"

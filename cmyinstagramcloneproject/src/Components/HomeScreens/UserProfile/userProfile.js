@@ -13,7 +13,7 @@ const UserProfilePage = (props) => {
     const [myUser, setUser] = useState([]);
 
     useEffect(() => {
-        fetch(`http://localhost:5000/user/${userId}`, {
+        fetch(`/user/${userId}`, {
             method: "get",
             headers: {
                 "Authorization": "Bearer " + localStorage.getItem("jwt")
@@ -33,7 +33,7 @@ const UserProfilePage = (props) => {
     }, [])
 
     const UserFollow = () => {
-        fetch("http://localhost:5000/follow", {
+        fetch("/follow", {
             method: "put",
             headers: {
                 "Content-Type": "application/json",
@@ -63,7 +63,7 @@ const UserProfilePage = (props) => {
             })
     }
     const UserUnFollow = () => {
-        fetch("http://localhost:5000/unfollow", {
+        fetch("/unfollow", {
             method: "put",
             headers: {
                 "Content-Type": "application/json",

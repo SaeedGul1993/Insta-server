@@ -12,7 +12,7 @@ const PrfilePage = (props) => {
 
     useEffect(() => {
         console.log("userInfo", typeof (props.userInfo))
-        fetch("http://localhost:5000/myposts", {
+        fetch("/myposts", {
             method: "get",
             headers: {
                 "Authorization": "Bearer " + localStorage.getItem("jwt")
@@ -62,7 +62,7 @@ const PrfilePage = (props) => {
     useEffect(() => {
         if (url) {
             console.log("url",url);
-            fetch("http://localhost:5000/updatepic", {
+            fetch("/updatepic", {
                 method: "put",
                 headers: {
                     "Content-Type":"application/json",

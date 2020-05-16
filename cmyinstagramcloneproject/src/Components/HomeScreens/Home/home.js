@@ -14,7 +14,7 @@ const Home = (props) => {
     const [comment, setComment] = useState("");
     useEffect(() => {
         console.log(props.userInfo);
-        fetch("http://localhost:5000/allpost", {
+        fetch("/allpost", {
             method: "get",
             headers: {
                 "Content-Type": "application/json",
@@ -32,7 +32,7 @@ const Home = (props) => {
     }, [])
 
     const deletePost = (postId) => {
-        fetch(`http://localhost:5000/deletepost/${postId}`, {
+        fetch(`/deletepost/${postId}`, {
             method: "delete",
             headers: {
                 "Authorization": "Bearer " + localStorage.getItem("jwt")
@@ -55,7 +55,7 @@ const Home = (props) => {
 
         console.log("postId", id1);
         console.log("commentId", id2);
-        fetch("http://localhost:5000/deletecomment", {
+        fetch("/deletecomment", {
             method: "put",
             headers: {
                 "Content-Type": "application/json",
@@ -86,7 +86,7 @@ const Home = (props) => {
     }
 
     const likePost = (id) => {
-        fetch("http://localhost:5000/like", {
+        fetch("/like", {
             method: "put",
             headers: {
                 "Content-Type": "application/json",
@@ -114,7 +114,7 @@ const Home = (props) => {
     }
 
     const unlikePost = (id) => {
-        fetch("http://localhost:5000/unlike", {
+        fetch("/unlike", {
             method: "put",
             headers: {
                 "Content-Type": "application/json",
@@ -143,7 +143,7 @@ const Home = (props) => {
     }
 
     const makeComment = (text, id) => {
-        fetch("http://localhost:5000/comment", {
+        fetch("/comment", {
             method: "put",
             headers: {
                 "Content-Type": "application/json",

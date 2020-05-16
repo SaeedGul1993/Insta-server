@@ -17,7 +17,7 @@ const CreatePost = () => {
         if (url) {
 
             console.log("url", url);
-            fetch("http://localhost:5000/createpost", {
+            fetch("/createpost", {
                 method: "post",
                 headers: {
                     "Content-Type": "application/json",
