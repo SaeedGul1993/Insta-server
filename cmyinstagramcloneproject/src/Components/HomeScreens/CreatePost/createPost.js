@@ -50,71 +50,70 @@ const CreatePost = () => {
     }, [url])
 
     const PostData = () => {
-
         const data = new FormData();
         data.append("file", image)
         data.append("upload_preset", "instaClone")
         data.append("cloud_name", "azaan")
-        fetch("https:api.cloudinary.com/v1_1/azaan/image/upload", {
+        fetch("https://api.cloudinary.com/v1_1/azaan/image/upload", {
             method: "post",
             body: data
         })
             .then(res => res.json())
-            .then(data => {
-                console.log(data.url);
-                setUrl(data.url)
-            })
-            .catch(err => {
-                console.log(err);
+    .then(data => {
+        console.log(data.url);
+        setUrl(data.url)
+    })
+    .catch(err => {
+        console.log(err);
 
-            })
+    })
     }
 
-    const handleFile = (e) => {
+const handleFile = (e) => {
 
-        setImage(e.target.files[0]);
-    }
+    setImage(e.target.files[0]);
+}
 
-    return (
-        <div className="create-post-container">
-            <Card className="create-post-card">
-                <div>
-                    <TextField
-                        label="Title"
-                        type="text"
-                        fullWidth
-                        className="create-post-field"
-                        value={title}
-                        onChange={(e) => setTitle(e.target.value)}
-                    />
-                </div>
-                <div>
-                    <TextField
-                        label="Body"
-                        type="text"
-                        fullWidth
-                        className="create-post-field"
-                        value={body}
-                        onChange={(e) => setBody(e.target.value)}
-                    />
-                </div>
-                <div className="create-post-upload-btn">
-                    <TextField
-                        label="Body"
-                        type="file"
-                        fullWidth
-                        className="create-post-field"
-                        onChange={handleFile}
-                    />
-                </div>
-                <div className="create-post-btn">
-                    <Button variant="contained" onClick={() => PostData()} >
-                        Submit Post
+return (
+    <div className="create-post-container">
+        <Card className="create-post-card">
+            <div>
+                <TextField
+                    label="Title"
+                    type="text"
+                    fullWidth
+                    className="create-post-field"
+                    value={title}
+                    onChange={(e) => setTitle(e.target.value)}
+                />
+            </div>
+            <div>
+                <TextField
+                    label="Body"
+                    type="text"
+                    fullWidth
+                    className="create-post-field"
+                    value={body}
+                    onChange={(e) => setBody(e.target.value)}
+                />
+            </div>
+            <div className="create-post-upload-btn">
+                <TextField
+                    label="Body"
+                    type="file"
+                    fullWidth
+                    className="create-post-field"
+                    onChange={handleFile}
+                />
+            </div>
+            <div className="create-post-btn">
+                <Button variant="contained" onClick={() => PostData()} >
+                    Submit Post
                 </Button>
-                </div>
-            </Card>
-        </div>
-    )
+            </div>
+        </Card>
+    </div>
+)
 }
 
 export default CreatePost;

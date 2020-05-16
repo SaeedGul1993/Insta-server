@@ -35,7 +35,7 @@ const PrfilePage = (props) => {
             data.append("file", image)
             data.append("upload_preset", "instaClone")
             data.append("cloud_name", "azaan")
-            fetch("https:api.cloudinary.com/v1_1/azaan/image/upload", {
+            fetch("https://api.cloudinary.com/v1_1/azaan/image/upload", {
                 method: "post",
                 body: data
             })
