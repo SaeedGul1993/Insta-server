@@ -1,0 +1,29 @@
+.create-post-btn Button {
+    font-family: 'Bree Serif', serif;
+    text-transform: capitalize !important;
+    width: 200px !important;
+    height: 50px !important;
+    background: #1976d2 !important;
+    color: #ffffff !important;
+    margin-top: 30px !important;
+    font-size: 17px !important;
+}
+.create-post-container{
+    padding-top: 120px;
+}
+.create-post-card{
+    max-width: 500px;
+    box-shadow: 1px 2px 5px #222222 !important;
+    margin: 0px auto;
+    text-align: center !important;
+    padding:20px;
+}
+.create-post-upload-btn{
+    font-family: 'Bree Serif', serif;
+}
+.upload-btn{
+    background: #1976d2 !important;
+    color: #ffffff !important;
+    margin-top: 20px !important;
+    font-family: 'Bree Serif', serif;
+}

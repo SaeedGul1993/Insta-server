@@ -1,0 +1,51 @@
+.home-container{
+    display: flex;
+    align-items: center !important;
+    flex-direction: column !important;
+    padding-top: 100px;
+}
+.home-card{
+    max-width: 500px;
+    height: max-content;
+    box-shadow: 1px 1px 2px #222222 !important;
+    padding-bottom: 20px !important;
+    margin-bottom: 20px !important;
+}
+.home-card>h2{
+    padding: 10px;
+    font-family: 'Bree Serif', serif;
+}
+.post-area{
+    padding: 10px;
+}
+.post-area > h2{
+    font-family: 'Bree Serif', serif;
+
+}
+.post-area>h6{
+    font-family: 'Bree Serif', serif;
+    font-size: 22px;
+}
+.post-area > p{
+    font-family: 'Bree Serif', serif;
+    font-size: 14px;
+    color: gray;
+
+}
+.comment-name{
+    font-weight: 600;
+    color: #222222;
+}
+.comment-container{
+    padding: 10px;
+}
+ .coment-input{
+    width: 450px !important;
+}
+.delete-btn{
+
+}
+.delete-btn:hover{
+    color: red !important;
+    cursor: pointer;
+}

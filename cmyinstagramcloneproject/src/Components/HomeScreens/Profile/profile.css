@@ -1,0 +1,44 @@
+.main-container{
+    margin: 150px auto ;
+    max-width: 550px;
+}
+.profile-container{
+    margin: 20px auto;
+    display: flex;
+    justify-content: space-around;
+    border-bottom: 1px solid gray;
+    padding-bottom: 10px;
+}
+.avatar-style{
+    width: 160px;
+    height: 160px;
+    border-radius: 80px;
+}
+.user-activity{
+    display: flex;
+    justify-content: space-around;
+    width: 110%;
+}
+.user-activity > h4 {
+    font-family: 'Bree Serif', serif;   
+}
+.gallery {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+.items {
+    width: 30%;
+    height: 30vh;
+    margin-bottom: 10px;
+}
+.profile-name{
+    font-family: 'Bree Serif', serif;   
+    font-size: 40px;
+}
+.update-heading{
+    font-size: 17px;
+    font-family: 'Bree Serif', serif;
+    color: #1976d2;   
+
+}
