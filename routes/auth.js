@@ -3,7 +3,7 @@ const Router = express.Router();
 const mongoose = require('mongoose');
 const User = mongoose.model("User");
 const bcrypt = require('bcryptjs');
-const { JWT_SECRETKEY } = require('../Config/key');
+const { JWT_SECRET } = require('../Config/key');
 const jwt = require('jsonwebtoken');
 
 Router.post("/signup", (req, res) => {
@@ -52,7 +52,7 @@ Router.post("/signin", (req, res) => {
                 bcrypt.compare(password, savedUser.password)
                     .then(doMatch => {
                         if (doMatch) {
-                            const token = jwt.sign({ _id: savedUser._id }, JWT_SECRETKEY);
+                            const token = jwt.sign({ _id: savedUser._id }, JWT_SECRET);
                             const { _id, name, email, followers, following, pic } = savedUser;
                             res.json({ token, user: { _id, name, email, followers, following, pic } });
                         }
