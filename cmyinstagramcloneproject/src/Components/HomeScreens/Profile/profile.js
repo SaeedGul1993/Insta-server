@@ -61,11 +61,11 @@ const PrfilePage = (props) => {
     }, [image])
     useEffect(() => {
         if (url) {
-            console.log("url",url);
+            console.log("url", url);
             fetch("/updatepic", {
                 method: "put",
                 headers: {
-                    "Content-Type":"application/json",
+                    "Content-Type": "application/json",
                     "Authorization": "Bearer " + localStorage.getItem("jwt")
                 },
                 body: JSON.stringify({
@@ -90,7 +90,10 @@ const PrfilePage = (props) => {
         <div className="main-container">
             <div className="profile-container">
                 <div>
-                    <img className="avatar-style" src={props.userInfo.pic} />
+                    <div>
+                        <img className="avatar-style" src={props.userInfo.pic} />
+                    </div>
+                    <br />
                     <div>
                         <span className="update-heading">Update Pic</span>  <Input type="file" placeholder="update pic" inputProps={{ 'aria-label': 'description' }} onChange={(e) => updateProfile(e.target.files[0])} />
                     </div>
@@ -107,7 +110,7 @@ const PrfilePage = (props) => {
             </div>
             <div className="gallery">
                 {myPosts.map((post) => {
-                    return <img key={post.id} className="items" alt={post.title} src={post.pic} />
+                    return  <img key={post.id} className="items" alt={post.title} src={post.pic} />
                 })}
             </div>
         </div>

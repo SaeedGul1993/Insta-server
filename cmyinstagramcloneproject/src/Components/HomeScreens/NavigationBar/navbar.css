@@ -3,7 +3,10 @@
     color: #222 !important;
 }
 .nav-sub-item-container{
-   margin-left: 800px !important;
+   margin-left: 750px !important;
+}
+.nav-sub-item-container1{
+    margin-left: 1000px !important;
 }
 a{
     text-decoration: none !important;
@@ -11,4 +14,49 @@ a{
 }
 .active-component{
     color: #1976d2 !important;
+}
+.search-icon{
+    margin-top: 10px !important;
+}
+
+#transition-modal-title{
+    display: flex;
+    justify-content: center;
+}
+
+.input-search{
+    width: 400px !important;
+}
+.list-user-container{
+    margin-top: 10px !important;
+    height: 439px !important;
+    overflow-y: auto;
+    overflow-x: hidden !important;
+}
+.list-user-container > #transition-modal-description {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+ul{
+    display: flex;
+    justify-content: center;
+    flex-direction: column !important;
+    margin-left: -40px !important;
+}
+#transition-modal-description{
+    list-style: none !important;
+    border: 1px solid #e3e3e3 !important;
+    padding: 10px !important;
+    cursor: pointer !important;
+}
+#transition-modal-description:hover{
+    background: #e3e3e3 !important;
+}
+.titleOfInstagram{
+    font-family: 'Grand Hotel', cursive !important;
+    font-size: 40px !important;
+}
+.active-component > .titleOfInstagram{
+    color:#1976d2 !important;
 }

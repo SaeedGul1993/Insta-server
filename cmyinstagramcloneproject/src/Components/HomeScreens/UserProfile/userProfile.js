@@ -11,6 +11,7 @@ const UserProfilePage = (props) => {
     const [myPosts, setMyPosts] = useState([]);
     const [myFollow, setMyFollow] = useState(props.userInfo ? props.userInfo.following.includes(userId) : true);
     const [myUser, setUser] = useState([]);
+    const [userID, setUserId] = useState(userId);
 
     useEffect(() => {
         fetch(`/user/${userId}`, {
@@ -31,6 +32,7 @@ const UserProfilePage = (props) => {
 
             })
     }, [])
+
 
     const UserFollow = () => {
         fetch("/follow", {

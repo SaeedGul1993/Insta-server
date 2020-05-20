@@ -5,6 +5,16 @@ const User = mongoose.model("User");
 const bcrypt = require('bcryptjs');
 const { JWT_SECRET } = require('../Config/key');
 const jwt = require('jsonwebtoken');
+const nodemailer = require('nodemailer');
+const sendgridTransport = require('nodemailer-sendgrid-transport');
+
+//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
+const transport = nodemailer.createTransport(sendgridTransport({
+    auth: {
+        api_key: "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"
+    }
+}))
+
 
 Router.post("/signup", (req, res) => {
     const { name, email, password, pic } = req.body;
@@ -25,7 +35,7 @@ Router.post("/signup", (req, res) => {
                         password: hashedPassword
                     })
                     user.save().
-                        then(() => {
+                        then((user) => {
                             res.json({ message: "saved successfully" })
                         })
                         .catch(err => {

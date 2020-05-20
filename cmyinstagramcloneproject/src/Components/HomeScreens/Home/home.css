@@ -3,6 +3,8 @@
     align-items: center !important;
     flex-direction: column !important;
     padding-top: 100px;
+    font-family: 'Bree Serif', serif;
+
 }
 .home-card{
     max-width: 500px;
@@ -35,6 +37,8 @@
 .comment-name{
     font-weight: 600;
     color: #222222;
+    font-family: 'Bree Serif', serif;
+
 }
 .comment-container{
     padding: 10px;
@@ -53,4 +57,11 @@
     width: 60px;
     height: 60px;
     border-radius: 40px;
+    margin-right: 10px;
+}
+.avatar-style2{
+    width: 40px;
+    height: 40px;
+    border-radius: 20px;
+    margin-right: 10px;
 }

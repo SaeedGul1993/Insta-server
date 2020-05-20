@@ -12,18 +12,18 @@ import { Link } from 'react-router-dom';
 const Home = (props) => {
     const [data, setData] = useState([]);
     const [comment, setComment] = useState("");
+
     useEffect(() => {
         console.log(props.userInfo);
         fetch("/allpost", {
             method: "get",
             headers: {
-                "Content-Type": "application/json",
                 "Authorization": "Bearer " + localStorage.getItem("jwt")
             }
         }).then(res => res.json())
             .then(result => {
-                console.log(result.posts);
-                setData(result.posts);
+                console.log(result);
+                setData(result);
             })
             .catch(err => {
                 console.log(err);
@@ -212,7 +212,9 @@ const Home = (props) => {
                             {
                                 item.comments.map(comment => {
                                     return <div key={comment._id} style={{ display: 'flex', justifyContent: 'space-between' }}>
-                                        <p ><span className="comment-name">{comment.postedBy.name}</span> : {comment.text}</p>
+                                        <p > <span>
+                                            <img className="avatar-style2" src={comment.postedBy.pic} />
+                                        </span><span className="comment-name">{comment.postedBy.name}</span> : {comment.text}</p>
                                         {comment.postedBy._id === props.userInfo._id && <DeleteIcon onClick={() => deleteComment(item._id, comment._id, comment.text)} className="delete-btn" />}
                                     </div>
                                 })

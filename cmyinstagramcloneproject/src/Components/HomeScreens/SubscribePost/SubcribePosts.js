@@ -17,7 +17,6 @@ const MyFollowingPost = (props) => {
         fetch("/getsubpost", {
             method: "get",
             headers: {
-                "Content-Type": "application/json",
                 "Authorization": "Bearer " + localStorage.getItem("jwt")
             }
         }).then(res => res.json())
@@ -179,7 +178,11 @@ const MyFollowingPost = (props) => {
                 return (
                     <Card key={index} className="home-card">
                         <div style={{ display: "flex", justifyContent: 'space-between' }}>
-                            <h2><Link to={item.postedBy._id !== props.userInfo._id ? `/profile/${item.postedBy._id}`:'/profile'}>{item.postedBy.name}</Link></h2> {item.postedBy._id === props.userInfo._id && <DeleteIcon onClick={() => deletePost(item._id)} className="delete-btn" />}
+                            <h2>
+                                <span>
+                                    <img className="avatar-style1" src={item.postedBy.pic} />
+                                </span>
+                                <Link to={item.postedBy._id !== props.userInfo._id ? `/profile/${item.postedBy._id}` : '/profile'}>{item.postedBy.name}</Link></h2> {item.postedBy._id === props.userInfo._id && <DeleteIcon onClick={() => deletePost(item._id)} className="delete-btn" />}
                         </div>
                         <div className="home-image">
                             <img alt="loading image" width="100%" src={`${item.pic}`} />
@@ -207,7 +210,9 @@ const MyFollowingPost = (props) => {
                             {
                                 item.comments.map(comment => {
                                     return <div key={comment._id} style={{ display: 'flex', justifyContent: 'space-between' }}>
-                                        <p ><span className="comment-name">{comment.postedBy.name}</span> : {comment.text}</p>
+                                        <p ><span>
+                                            <img className="avatar-style2" src={comment.postedBy.pic} />
+                                        </span><span className="comment-name">{comment.postedBy.name}</span> : {comment.text}</p>
                                         {comment.postedBy._id === props.userInfo._id && <DeleteIcon onClick={() => deleteComment(item._id, comment._id, comment.text)} className="delete-btn" />}
                                     </div>
                                 })

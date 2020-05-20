@@ -80,6 +80,17 @@ Router.put("/updatepic", requireLogin, (req, res) => {
 
 })
 
+Router.post("/search-user", requireLogin, (req, res) => {
+    let user_pattern = new RegExp("^" + req.body.query);
+    User.find({ email: { $regex: user_pattern } })
+        .then(user => {
+            res.json({ user });
+        })
+        .catch(err => {
+            console.log(err);
+        })
+})
+
 
 
 module.exports = Router;
